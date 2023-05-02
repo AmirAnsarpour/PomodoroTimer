@@ -16,27 +16,25 @@
 <body>
     <div id="big-box">
         <div id="button-top">
-            <button id="btn-one">Pomodoro</button>
-            <button id="btn-two">Short Break</button>
-            <button id="btn-three">Long Break</button>
+            <button id="Pomodoro" class="clicked" onclick="setPomodoro()">Pomodoro</button>
+            <button id="ShortBreak" onclick="setShortBreak()">Short Break</button>
+            <button id="LongBreak" onclick="setLongBreak()">Long Break</button>
         </div>
-        <div id="timer">
-            <h1>
-                <span id="minutes">13</span>:<span id="secend">45<span>
+        <div>
+            <h1 id="timer">
+                25:00
             </h1>
         </div>
         <div id="button-bottom">
-            <button id="btn-start">Start</button>
-            <i class="bi bi-arrow-clockwise"></i>
-            <i class="bi bi-gear-fill"></i>
+            <button id="startBtn" class="btn" onclick="startTimer()">Start</button>
+            <button id="stopBtn" class="btn hidden" onclick="stopTimer()"> Stop</button>
+            <i id="reset" onclick="resetTimer()" class="bi bi-arrow-clockwise"></i>
+            <!-- <i class="bi bi-gear-fill"></i> -->
         </div>
     </div>
     <div id="my-id">
-        <p>by<a href="#">AmirAnsarpour</a></p>
+        <p>by<a href="https://AmirAnsarpour.ir/">AmirAnsarpour</a></p>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"
-        integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/index.js"></script>
 </body>
 

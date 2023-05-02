@@ -1,54 +1,105 @@
-$(document).ready(function () {
-    const minutesElement = $("#minutes"), secendElement = $("#secend");
+let minutes = 25;
+let seconds = 0;
+let timerId;
 
-    $($("#btn-one")).click(function () {
-        minutesElement.text("25");
-        secendElement.text("00");
-    });
-    $($("#btn-two")).click(function () {
-        minutesElement.text("05");
-        secendElement.text("00");
-    });
-    $($("#btn-three")).click(function () {
-        minutesElement.text("10");
-        secendElement.text("00");
-    });
+let pomodoroBtn = document.querySelector("#Pomodoro");
+let shortBtn = document.querySelector("#ShortBreak");
+let longBtn = document.querySelector("#LongBreak");
 
-    $($("#btn-start")).click(function () {
-        let minutesCal = minutesElement.text() - 1;
-        let minutesLength = (' ' + minutesCal).length - 1;
-        
-        if (minutesLength == 1) {
-            minutesCal = "0" + minutesCal;
-        }
-        setInterval(function () {
-            minutesElement.text(minutesCal);
-        }, 1000)
+let startBtn = document.querySelector("#startBtn");
+let stopBtn = document.querySelector("#stopBtn");
+let resetBtn = document.querySelector("#reset");
 
-        setInterval(function () {
-            minutesCal--;
-            if (minutesLength == 1) {
-                minutesCal = "0" + minutesCal;
-            }
-            minutesElement.text(minutesCal);
-        }, 61000);
+function startTimer() {
+    timerId = setInterval(updateTimer, 1000);
+}
 
-        let secendCal = 60;
-        setInterval(function () {
-            secendCal--;
-            let secendLength = (' ' + secendCal).length - 1;
-            if (secendCal == -1) {
-                secendCal = 59;
-            }
-            if (secendLength == 1) {
-                secendCal = "0" + secendCal;
-            }
-            secendElement.text(secendCal);
-        }, 1000);
-        if (minutesCal == 0 || secendCal == 0) {
-            alert("tamom");
-            minutesCal == 00
-            secendCal == 00;
-        }
-    })
+function updateTimer() {
+    if (seconds > 0) {
+        seconds--;
+    } else if (minutes > 0) {
+        minutes--;
+        seconds = 59;
+    } else {
+        clearInterval(timerId);
+        alert("Time's up!");
+    }
+
+    const minutesStr = minutes.toString().padStart(2, "0");
+    const secondsStr = seconds.toString().padStart(2, "0");
+    document.getElementById("timer").innerHTML = `${minutesStr}:${secondsStr}`;
+    document.title = `${minutesStr}:${secondsStr} - Pomodoro Timer`;
+}
+
+function stopTimer() {
+    clearInterval(timerId);
+}
+
+function resetTimer() {
+    clearInterval(timerId);
+    minutes = 25;
+    seconds = 0;
+    document.getElementById("timer").innerHTML = "25:00";
+}
+
+function setPomodoro() {
+    clearInterval(timerId);
+    minutes = 25;
+    seconds = 0;
+    document.getElementById("timer").innerHTML = "25:00";
+}
+
+function setShortBreak() {
+    clearInterval(timerId);
+    minutes = 5;
+    seconds = 0;
+    document.getElementById("timer").innerHTML = "05:00";
+}
+
+function setLongBreak() {
+    clearInterval(timerId);
+    minutes = 10;
+    seconds = 0;
+    document.getElementById("timer").innerHTML = "10:00";
+}
+
+pomodoroBtn.addEventListener("click", function () {
+    startBtn.classList.remove("hidden");
+    stopBtn.classList.add("hidden");
+
+    pomodoroBtn.classList.add("clicked");
+    shortBtn.classList.remove("clicked");
+    longBtn.classList.remove("clicked");
+});
+shortBtn.addEventListener("click", function () {
+    startBtn.classList.remove("hidden");
+    stopBtn.classList.add("hidden");
+
+    pomodoroBtn.classList.remove("clicked");
+    shortBtn.classList.add("clicked");
+    longBtn.classList.remove("clicked");
+});
+longBtn.addEventListener("click", function () {
+    startBtn.classList.remove("hidden");
+    stopBtn.classList.add("hidden");
+
+    pomodoroBtn.classList.remove("clicked");
+    shortBtn.classList.remove("clicked");
+    longBtn.classList.add("clicked");
+});
+
+startBtn.addEventListener("click", function () {
+    startBtn.classList.add("hidden");
+    stopBtn.classList.remove("hidden");
+});
+stopBtn.addEventListener("click", function () {
+    startBtn.classList.remove("hidden");
+    stopBtn.classList.add("hidden");
+});
+resetBtn.addEventListener("click", function () {
+    startBtn.classList.remove("hidden");
+    stopBtn.classList.add("hidden");
+    pomodoroBtn.classList.add("clicked");
+    shortBtn.classList.remove("clicked");
+    longBtn.classList.remove("clicked");
 });

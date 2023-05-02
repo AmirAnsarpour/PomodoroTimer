@@ -7,6 +7,9 @@
 ::selection {
   background: rgba(0, 80, 230, 0.3);
 }
+.hidden {
+  display: none;
+}
 body {
   height: 100vh;
   background-position: center;
@@ -42,10 +45,12 @@ body {
   color: #040404;
   background-color: #ffffff;
 }
+#big-box #button-top .clicked {
+  color: #040404;
+  background-color: #ffffff;
+}
 #big-box #timer {
   text-align: center;
-}
-#big-box #timer h1 {
   color: #ffffff;
   font-size: 200px;
 }
@@ -53,18 +58,25 @@ body {
   margin-top: 30px;
   text-align: center;
 }
-#big-box #button-bottom button {
-  cursor: pointer;
+#big-box #button-bottom #startBtn {
+  padding: 10px 30px;
   background-color: #ffffff;
   color: #040404;
-  padding: 10px 30px;
+}
+#big-box #button-bottom #stopBtn {
+  padding: 10px 32px;
+  background-color: #040404;
+  color: #ffffff;
+}
+#big-box #button-bottom .btn {
+  cursor: pointer;
   font-size: 33px;
   border-radius: 20px;
   border: 2px solid #ffffff;
   margin: 0px 15px;
   transition: all 200ms ease 0s;
 }
-#big-box #button-bottom button:hover {
+#big-box #button-bottom .btn:hover {
   color: #ffffff;
   background-color: rgba(255, 255, 255, 0.05);
 }

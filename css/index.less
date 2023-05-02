@@ -15,6 +15,10 @@
     background: rgba(0, 80, 230, 0.3);
 }
 
+.hidden {
+    display: none;
+}
+
 body {
     height: 100vh;
     // background-image: url("../images/background-1.jpg");
@@ -52,27 +56,39 @@ body {
                 color: @color-black;
                 background-color: @color-white;
             }
+
+        }
+
+        .clicked {
+            color: @color-black;
+            background-color: @color-white;
         }
     }
 
     #timer {
         text-align: center;
-
-        h1 {
-            color: @color-white;
-            font-size: 200px;
-        }
+        color: @color-white;
+        font-size: 200px;
     }
 
     #button-bottom {
         margin-top: 30px;
         text-align: center;
 
-        button {
-            cursor: pointer;
+        #startBtn {
+            padding: 10px 30px;
             background-color: @color-white;
             color: @color-black;
-            padding: 10px 30px;
+        }
+
+        #stopBtn {
+            padding: 10px 32px;
+            background-color: @color-black;
+            color: @color-white;
+        }
+
+        .btn {
+            cursor: pointer;
             font-size: 33px;
             border-radius: 20px;
             border: 2px solid @color-white;
