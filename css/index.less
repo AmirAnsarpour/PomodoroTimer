@@ -4,6 +4,8 @@
 @color-hover-white: rgba(255, 255, 255, 0.6);
 @color-hover-black: rgba(4, 4, 4, 0.6);
 
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -26,8 +28,45 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-color: @color-black;
-    font-family: sans-serif;
+    font-family: 'Ubuntu', sans-serif;
     cursor: default;
+}
+
+#animate {
+    position: fixed;
+    background-color: @color-black;
+    width: 100%;
+    height: 100vh;
+    bottom: 0;
+    left: 0;
+    font-size: 70px;
+    z-index: 100;
+
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-weight: 600;
+        margin: auto;
+        animation: load 1000ms infinite 0s ease-in-out;
+        animation-direction: alternate;
+        color: @color-white;
+        text-shadow: 0 0 10px @color-black;
+
+        @keyframes load {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                letter-spacing: 2px;
+                opacity: 0.08;
+                filter: blur(3px);
+            }
+        }
+    }
 }
 
 #big-box {
@@ -94,11 +133,6 @@ body {
             border: 2px solid @color-white;
             margin: 0px 15px;
             transition: all 200ms ease 0s;
-
-            &:hover {
-                color: @color-white;
-                background-color: @color-befor-hover;
-            }
         }
 
         i {
@@ -137,8 +171,19 @@ body {
             transition: all 300ms ease 0s;
 
             &:hover {
-                color: orangered;
+                color: rgb(68, 192, 241);
             }
         }
     }
+}
+
+#FullScreen {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 0px 0px 20px 0px;
+    color: @color-white;
+    padding: 15px 30px;
 }

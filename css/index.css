@@ -1,3 +1,31 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoC1CzTtw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCs6KVjbNBYlgo6eA.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCjC3Ttw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ubuntu/v20/4iCv6KVjbNBYlgoCxCvTtw.ttf) format('truetype');
+}
 * {
   margin: 0;
   padding: 0;
@@ -16,8 +44,40 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #040404;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   cursor: default;
+}
+#animate {
+  position: fixed;
+  background-color: #040404;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  left: 0;
+  font-size: 70px;
+  z-index: 100;
+}
+#animate div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 600;
+  margin: auto;
+  animation: load 1000ms infinite 0s ease-in-out;
+  animation-direction: alternate;
+  color: #ffffff;
+  text-shadow: 0 0 10px #040404;
+}
+@keyframes load {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    letter-spacing: 2px;
+    opacity: 0.08;
+    filter: blur(3px);
+  }
 }
 #big-box {
   padding: 40px;
@@ -77,8 +137,7 @@ body {
   transition: all 200ms ease 0s;
 }
 #big-box #button-bottom .btn:hover {
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.05);
+  opacity: 0;
 }
 #big-box #button-bottom i {
   cursor: pointer;
@@ -111,5 +170,15 @@ body {
   transition: all 300ms ease 0s;
 }
 #my-id p a:hover {
-  color: orangered;
+  color: #44c0f1;
+}
+#FullScreen {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 40px;
+  border-radius: 0px 0px 20px 0px;
+  color: #ffffff;
+  padding: 15px 30px;
 }
