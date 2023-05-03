@@ -32,9 +32,6 @@
   border: 0;
   outline: 0;
 }
-::selection {
-  background: rgba(0, 80, 230, 0.3);
-}
 .hidden {
   display: none;
 }
@@ -43,6 +40,9 @@ body {
   background-color: #040404;
   font-family: 'Ubuntu', sans-serif;
   cursor: default;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 #animate {
   position: fixed;
@@ -79,8 +79,7 @@ body {
 @media all and (max-width: 991.98px) {
   #big-box {
     overflow: hidden;
-    top: 20%;
-    transform: translate(0%, 20%);
+    transform: translate(0%, 8vh);
   }
   #big-box #button-top button {
     background-color: rgba(255, 255, 255, 0.05);
@@ -102,7 +101,7 @@ body {
   #big-box #timer {
     text-align: center;
     color: #ffffff;
-    font-size: 25vw;
+    font-size: 30vw;
   }
   #big-box #button-bottom {
     margin-top: 30px;
@@ -183,7 +182,7 @@ body {
     color: #ffffff;
     padding: 10px 30px;
     font-size: 25px;
-    border-radius: 20px;
+    border-radius: 8px;
     border: 2px solid #ffffff;
     margin: 0px 15px;
     transition: all 200ms ease 0s;
@@ -218,7 +217,7 @@ body {
   #big-box #button-bottom .btn {
     cursor: pointer;
     font-size: 33px;
-    border-radius: 20px;
+    border-radius: 8px;
     border: 2px solid #ffffff;
     margin: 0px 15px;
     transition: all 200ms ease 0s;
