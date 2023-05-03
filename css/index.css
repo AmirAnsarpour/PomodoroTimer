@@ -40,9 +40,6 @@
 }
 body {
   height: 100vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-color: #040404;
   font-family: 'Ubuntu', sans-serif;
   cursor: default;
@@ -79,106 +76,201 @@ body {
     filter: blur(3px);
   }
 }
-#big-box {
-  padding: 40px;
-  width: 100%;
-  position: fixed;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+@media all and (max-width: 991.98px) {
+  #big-box {
+    overflow: hidden;
+    top: 20%;
+    transform: translate(0%, 20%);
+  }
+  #big-box #button-top button {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    display: block;
+    width: 80%;
+    padding: 20px 0px;
+    margin: 20px auto;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 19px;
+    transition: all 200ms ease 0s;
+  }
+  #big-box #button-top .clicked {
+    color: #040404;
+    background-color: #ffffff;
+  }
+  #big-box #timer {
+    text-align: center;
+    color: #ffffff;
+    font-size: 25vw;
+  }
+  #big-box #button-bottom {
+    margin-top: 30px;
+    text-align: center;
+  }
+  #big-box #button-bottom #startBtn {
+    padding: 10px 30px;
+    background-color: #ffffff;
+    color: #040404;
+  }
+  #big-box #button-bottom #stopBtn {
+    padding: 10px 32px;
+    background-color: #040404;
+    color: #ffffff;
+  }
+  #big-box #button-bottom .btn {
+    width: 80%;
+    cursor: pointer;
+    font-size: 33px;
+    border-radius: 8px;
+    border: 2px solid #ffffff;
+    margin: 0px auto;
+    transition: all 200ms ease 0s;
+  }
+  #big-box #button-bottom i {
+    display: block;
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 35px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 20px 20px;
+    transition: all 200ms ease 0s;
+  }
+  #big-box #button-bottom i:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  #my-id {
+    position: fixed;
+    left: 50%;
+    top: 98%;
+    transform: translate(-50%, -98%);
+  }
+  #my-id p {
+    color: #ffffff;
+    font-size: 14px;
+  }
+  #my-id p a {
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px transparent;
+    font-size: 20px;
+    padding: 20px;
+    transition: all 300ms ease 0s;
+  }
+  #my-id p a:hover {
+    color: #44c0f1;
+  }
+  #FullScreen {
+    display: none;
+  }
 }
-#big-box #button-top {
-  text-align: center;
-}
-#big-box #button-top button {
-  cursor: pointer;
-  background-color: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  padding: 10px 30px;
-  font-size: 25px;
-  border-radius: 20px;
-  border: 2px solid #ffffff;
-  margin: 0px 15px;
-  transition: all 200ms ease 0s;
-}
-#big-box #button-top button:hover {
-  color: #040404;
-  background-color: #ffffff;
-}
-#big-box #button-top .clicked {
-  color: #040404;
-  background-color: #ffffff;
-}
-#big-box #timer {
-  text-align: center;
-  color: #ffffff;
-  font-size: 200px;
-}
-#big-box #button-bottom {
-  margin-top: 30px;
-  text-align: center;
-}
-#big-box #button-bottom #startBtn {
-  padding: 10px 30px;
-  background-color: #ffffff;
-  color: #040404;
-}
-#big-box #button-bottom #stopBtn {
-  padding: 10px 32px;
-  background-color: #040404;
-  color: #ffffff;
-}
-#big-box #button-bottom .btn {
-  cursor: pointer;
-  font-size: 33px;
-  border-radius: 20px;
-  border: 2px solid #ffffff;
-  margin: 0px 15px;
-  transition: all 200ms ease 0s;
-}
-#big-box #button-bottom .btn:hover {
-  opacity: 0;
-}
-#big-box #button-bottom i {
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 35px;
-  padding: 10px 15px;
-  border-radius: 20px;
-  margin: 0px 20px;
-  transition: all 200ms ease 0s;
-}
-#big-box #button-bottom i:hover {
-  color: rgba(255, 255, 255, 0.6);
-}
-#my-id {
-  position: fixed;
-  left: 50%;
-  top: 98%;
-  transform: translate(-50%, -98%);
-}
-#my-id p {
-  color: #ffffff;
-  font-size: 14px;
-}
-#my-id p a {
-  text-decoration: none;
-  color: #ffffff;
-  text-shadow: 0px 0px 10px transparent;
-  font-size: 20px;
-  padding: 20px;
-  transition: all 300ms ease 0s;
-}
-#my-id p a:hover {
-  color: #44c0f1;
-}
-#FullScreen {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  cursor: pointer;
-  font-size: 40px;
-  border-radius: 0px 0px 20px 0px;
-  color: #ffffff;
-  padding: 15px 30px;
+@media all and (min-width: 992px) {
+  #big-box {
+    padding: 40px;
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  #big-box #button-top {
+    text-align: center;
+  }
+  #big-box #button-top button {
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    padding: 10px 30px;
+    font-size: 25px;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    margin: 0px 15px;
+    transition: all 200ms ease 0s;
+  }
+  #big-box #button-top button:hover {
+    color: #040404;
+    background-color: #ffffff;
+  }
+  #big-box #button-top .clicked {
+    color: #040404;
+    background-color: #ffffff;
+  }
+  #big-box #timer {
+    text-align: center;
+    color: #ffffff;
+    font-size: 200px;
+  }
+  #big-box #button-bottom {
+    margin-top: 30px;
+    text-align: center;
+  }
+  #big-box #button-bottom #startBtn {
+    padding: 10px 30px;
+    background-color: #ffffff;
+    color: #040404;
+  }
+  #big-box #button-bottom #stopBtn {
+    padding: 10px 32px;
+    background-color: #040404;
+    color: #ffffff;
+  }
+  #big-box #button-bottom .btn {
+    cursor: pointer;
+    font-size: 33px;
+    border-radius: 20px;
+    border: 2px solid #ffffff;
+    margin: 0px 15px;
+    transition: all 200ms ease 0s;
+  }
+  #big-box #button-bottom .btn:hover {
+    opacity: 0.7;
+  }
+  #big-box #button-bottom i {
+    cursor: pointer;
+    color: #ffffff;
+    font-size: 35px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin: 0px 20px;
+    transition: all 200ms ease 0s;
+  }
+  #big-box #button-bottom i:hover {
+    color: rgba(255, 255, 255, 0.6);
+  }
+  #my-id {
+    position: fixed;
+    left: 50%;
+    top: 98%;
+    transform: translate(-50%, -98%);
+  }
+  #my-id p {
+    color: #ffffff;
+    font-size: 14px;
+  }
+  #my-id p a {
+    text-decoration: none;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px transparent;
+    font-size: 20px;
+    padding: 20px;
+    transition: all 300ms ease 0s;
+  }
+  #my-id p a:hover {
+    color: #44c0f1;
+  }
+  #FullScreen {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 40px;
+    border-radius: 0px 0px 20px 0px;
+    color: #ffffff;
+    padding: 15px 30px;
+    transition: all 200ms ease 0s;
+  }
+  #FullScreen:hover {
+    opacity: 0.7;
+  }
 }
