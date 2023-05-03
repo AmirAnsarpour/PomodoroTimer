@@ -1,6 +1,7 @@
 let minutes = 25;
 let seconds = 0;
 let timerId;
+const alarm = document.getElementById("alarm");
 
 let pomodoroBtn = document.querySelector("#Pomodoro");
 let shortBtn = document.querySelector("#ShortBreak");
@@ -22,6 +23,8 @@ function updateTimer() {
         seconds = 59;
     } else {
         clearInterval(timerId);
+        showNotification();
+        playAlarm();
         alert("Time's up!");
     }
 
@@ -133,4 +136,7 @@ function showNotification() {
             }
         });
     }
+}
+function playAlarm() {
+    alarm.play();
 }
