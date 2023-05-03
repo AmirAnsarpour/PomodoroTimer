@@ -117,19 +117,19 @@ function toggleFullScreen() {
         }
     }
 }
-function showNotif() {
+function showNotification() {
     if (Notification.permission === "granted") {
         const options = {
             body: "Time's up!",
         };
-        const notif = new Notification("Pomodoro Timer", options);
-        notif.onclick = function () {
+        const notification = new Notification("Pomodoro Timer", options);
+        notification.onclick = function () {
             window.focus();
         };
     } else if (Notification.permission !== "denied") {
         Notification.requestPermission().then(permission => {
             if (permission === "granted") {
-                showNotif();
+                showNotification();
             }
         });
     }
