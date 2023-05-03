@@ -79,7 +79,6 @@ body {
 @media all and (max-width: 991.98px) {
   #big-box {
     overflow: hidden;
-    transform: translate(0%, 8vh);
   }
   #big-box #button-top button {
     background-color: rgba(255, 255, 255, 0.05);

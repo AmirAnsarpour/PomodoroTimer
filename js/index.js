@@ -40,6 +40,7 @@ function resetTimer() {
     minutes = 25;
     seconds = 0;
     document.getElementById("timer").innerHTML = "25:00";
+    document.title = "25:00 - Pomodoro Timer";
 }
 
 function setPomodoro() {
@@ -47,6 +48,7 @@ function setPomodoro() {
     minutes = 25;
     seconds = 0;
     document.getElementById("timer").innerHTML = "25:00";
+    document.title = "25:00 - Pomodoro Timer";
 }
 
 function setShortBreak() {
@@ -54,6 +56,7 @@ function setShortBreak() {
     minutes = 5;
     seconds = 0;
     document.getElementById("timer").innerHTML = "05:00";
+    document.title = "05:00 - Pomodoro Timer";
 }
 
 function setLongBreak() {
@@ -61,6 +64,7 @@ function setLongBreak() {
     minutes = 10;
     seconds = 0;
     document.getElementById("timer").innerHTML = "10:00";
+    document.title = "10:00 - Pomodoro Timer";
 }
 
 pomodoroBtn.addEventListener("click", function () {
@@ -111,5 +115,22 @@ function toggleFullScreen() {
         if (document.exitFullscreen) {
             document.exitFullscreen();
         }
+    }
+}
+function showNotification() {
+    if (Notification.permission === "granted") {
+        const options = {
+            body: "Time's up!",
+        };
+        const notification = new Notification("Pomodoro Timer", options);
+        notification.onclick = function () {
+            window.focus();
+        };
+    } else if (Notification.permission !== "denied") {
+        Notification.requestPermission().then(permission => {
+            if (permission === "granted") {
+                showNotification();
+            }
+        });
     }
 }
