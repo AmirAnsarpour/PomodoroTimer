@@ -10,14 +10,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
     <!-- my css -->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/loading-external.css">
 </head>
 
 <body>
-    <div id="animate">
-        <div>
-            Loading
+    <!-- loading screen -->
+    <div class="main-loader-ex">
+        <div class="loader-ex">
+            <div class="loader-ex-dot"></div>
+            <div class="loader-ex-dot"></div>
+            <div class="loader-ex-dot"></div>
         </div>
     </div>
+    <!-- app -->
     <div id="big-box">
         <div id="button-top">
             <button id="Pomodoro" class="clicked" onclick="setPomodoro()">Pomodoro</button>
@@ -40,7 +45,6 @@
         <p>by<a href="https://AmirAnsarpour.ir/" target="_blank">AmirAnsarpour</a></p>
     </div>
     <i id="FullScreen" onclick="toggleFullScreen()" class="bi bi-fullscreen"></i>
-    <audio id="alarm" src="audio/alarm.mp3"></audio>
     <script src="js/index.js"></script>
     <script src="js/loading-screen.js"></script>
 </body>

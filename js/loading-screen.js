@@ -1,4 +1,4 @@
-let loadingScreen = document.querySelector("#animate");
+const loadingScreen = document.querySelector(".main-loader-ex");
 let loadingOpacity = 1;
 let loadingKey;
 
