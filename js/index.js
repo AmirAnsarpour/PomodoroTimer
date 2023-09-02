@@ -137,6 +137,3 @@ function showNotification() {
         });
     }
 }
-function playAlarm() {
-    alarm.play();
-}
